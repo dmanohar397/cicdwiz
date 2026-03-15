@@ -5,11 +5,11 @@ async function generatePipeline(){
 
 const data = {
 
-repo: "github",
-language: "python",
-framework: "fastapi",
+repo: document.getElementById("repo").value,
+language: document.getElementById("language").value,
+framework: document.getElementById("framework").value,
 docker: true,
-cloud: "azure"
+cloud: document.getElementById("cloud").value
 
 }
 

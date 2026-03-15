@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="CICDWiz API",
-    description="Generate CI/CD pipelines automatically",
+    description="API that generates CI/CD pipelines automatically for software projects",
     version="1.0.0"
 )
 
@@ -41,11 +41,16 @@ def generate(req: PipelineRequest):
     workflow, dockerfile = generate_pipeline(req)
 
     return {
+        "message": "Pipeline generated successfully",
         "workflow": workflow,
         "dockerfile": dockerfile
     }
     
 @app.get("/")
 def home():
-    return {"message": "CICDWiz API is running"}
-    
+    return {
+        "project": "CICDWiz",
+        "description": "Generate CI/CD pipelines automatically",
+        "docs": "/docs",
+        "health": "/health"
+    }    

@@ -41,3 +41,26 @@ CMD ["python","main.py"]
 """
 
     return workflow, dockerfile
+
+if language == "node":
+    workflow = """
+name: Node CI
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - run: npm install
+    - run: npm test
+"""
