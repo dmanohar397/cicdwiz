@@ -62,4 +62,4 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'cicdwiz-api'
-publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISH_PROFILE }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISH_PROFILE }}
