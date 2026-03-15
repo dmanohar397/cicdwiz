@@ -4,7 +4,7 @@ sys.path.append(os.path.dirname(__file__))
 
 from fastapi import FastAPI
 from pydantic import BaseModel
-from generator import generate_pipeline
+from backend.generator import generate_pipeline
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
@@ -44,3 +44,8 @@ def generate(req: PipelineRequest):
         "workflow": workflow,
         "dockerfile": dockerfile
     }
+    
+@app.get("/")
+def home():
+    return {"message": "CICDWiz API is running"}
+    
