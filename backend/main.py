@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from generator import generate_pipeline
+from backend.generator import generate_pipeline
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
