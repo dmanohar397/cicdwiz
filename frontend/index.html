@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>CICDWiz</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1>CICDWiz</h1>
+<p>Generate CI/CD Pipelines in Seconds</p>
+
+<div class="form">
+
+<label>Repository</label>
+<select id="repo">
+<option value="github">GitHub</option>
+</select>
+
+<label>Language</label>
+<select id="language">
+<option value="python">Python</option>
+</select>
+
+<label>Framework</label>
+<select id="framework">
+<option value="fastapi">FastAPI</option>
+</select>
+
+<label>Cloud</label>
+<select id="cloud">
+<option value="azure">Azure</option>
+</select>
+
+<button onclick="generatePipeline()">Generate Pipeline</button>
+
+</div>
+
+<h2>Generated Output</h2>
+
+<pre id="output"></pre>
+
+<button onclick="downloadWorkflow()">Download Workflow</button>
+<button onclick="downloadDocker()">Download Dockerfile</button>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
